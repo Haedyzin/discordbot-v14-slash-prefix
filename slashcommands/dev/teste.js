@@ -6,7 +6,7 @@ module.exports = {
     ownerOnly: true,
     run: async(client, interaction) => {
 
-        interaction.reply({ content: `Olá criador!`, ephemeral: true })
+        interaction.reply({ content: `Olá criador!`, ephemeral: true, allowedMentions: { repliedUser: false } })
 
     }
 }

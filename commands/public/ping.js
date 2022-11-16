@@ -1,15 +1,16 @@
-const Discord = require('discord.js')
+const { EmbedBuilder } = require("discord.js")
 
 module.exports = {
-    name: 'ping',
-    description: 'Ver o ping do bot',
-    aliases: ['latency', 'latencia'],
-    run: async(client, message, args) => {
+    name: "ping",
+    description: "Veja a latência do bot",
+    aliases: ['latency'],
+    run: async(client, message) => {
 
-        let nick = args.join(" ")
-        if (!nick) { nick = message.author.username }
+        let PingEmbed = new EmbedBuilder()
+            .setColor("Random")
+            .setDescription(`${client.ws.ping}ms.`)
 
-        message.reply({ content: `📡 **|** ${nick}, Meu ping está em \`${client.ws.ping}\`ms.` })
+        message.reply({ embeds: [PingEmbed], ephemeral: true, allowedMentions: { repliedUser: false } })    
 
     }
 }

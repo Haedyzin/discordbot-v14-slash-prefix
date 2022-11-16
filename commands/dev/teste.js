@@ -7,7 +7,7 @@ module.exports = {
     ownerOnly: true,
     run: async(client, message, args) => {
 
-        message.reply({ content: `Olá criador!` })
+        message.reply({ content: `Olá criador!`, allowedMentions: { repliedUser: false } })
 
     }
 }
